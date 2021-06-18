@@ -1,0 +1,4 @@
+exclude:
+  - .gitignore
+  - GiulioStarace_CV.tex
+  - resume.cls
