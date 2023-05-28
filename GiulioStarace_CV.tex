@@ -1,147 +1,243 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Medium Length Professional CV
-% LaTeX Template
-% Version 2.0 (8/5/13)
-%
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Rishi Shah
-%
-% Important note:
-% This template requires the resume.cls file to be in the same directory as the
-% .tex file. The resume.cls file provides the resume style used for structuring the
-% document.
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+\documentclass[letterpaper,10pt]{article}
 
-\documentclass{resume} % Use the custom resume.cls style
-\usepackage{hyperref}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\setlist[itemize]{noitemsep, topsep=0pt}
-\usepackage[left=0.5in,top=0.4in,right=0.5in,bottom=0.4in]{geometry} % Document margins
-\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
-\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
-\name{Giulio Starace} % Your name
-\address{giulio.starace@gmail.com \\ \today}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \begin{document}
 
-\begin{rSection}{Education}
+%----------HEADING----------
 
-	{\bf MSc Artificial Intelligence} \hfill \textbf{Amsterdam, The Netherlands}
-	\\\href{https://www.dur.ac.uk/}{\textit{University of Amsterdam}} \hfill Current GPA: 8.32 \hfill {\em September 2021
-		- 2023 (ongoing)}
-	\begin{itemize}
-		\item Current thesis direction: Natural language and Goal Misgeneralization In Offline
-		      Reinforcement Learning
-		\item Topics of note: Machine Learning, Deep Learning, Natural Language Processing, Information
-		      Retrieval,\\ Reinforcement Learning, Spiking Neural Networks
-	\end{itemize}
-
-	{\bf ABC Summer School - Computations in Consciousness and Perception} \hfill \textbf{Amsterdam, The Netherlands}
-	\\\href{https://www.dur.ac.uk/}{\textit{University of Amsterdam}} \hfill {\em June 2022}
-	\begin{itemize}
-		\item 2-week full-time computational neuroscience programme. Developed Project proposal
-		      available at \href{https://www.giuliostarace.com/ltm/}{giuliostarace.com/ltm}.
-	\end{itemize}
-
-	{\bf BSc Hons. in Natural Sciences (Physics \& Computer Science)} \hfill \textbf{Durham, UK}
-	\\\href{https://www.dur.ac.uk/}{\textit{Durham University}}\hfill GPA: First-Class Honours \hfill {\em October 2016 - July 2019}
-	\begin{itemize}\vspace{-0.5em}
-		\item Topics of note: Statistics, Vector Calculus, Linear Algebra, Thermodynamics, Quantum \&
-		      Particle Physics, Databases, Algorithms and Data-structures, Cryptography and Information,
-		      Compiler Design, Operating Systems, Computer Vision
-	\end{itemize}
-\end{rSection}
-
-\begin{rSection}{Experience}
-
-	{\bf \href{https://icai.ai/airlab/}{University of Amsterdam - AIRLab}} \hfill \textbf{Amsterdam,
-		The Netherlands}
-	\\ \textit{Part-time Researcher (Research Assistant)} \hfill {\em April 2022 - October 2022}
-	\begin{itemize}\vspace{-0.5em}
-		\item Cross-lingual adaptation of large language models (LLMs). Paper and Code:
-		      \href{https://github.com/thesofakillers/claficle}{github.com/thesofakillers/claficle}
-		\item Proposed novel ``Post-Hoc Disentanglement via Vessel Adapters (PHoDiVA)'' method.
-	\end{itemize}
-
-	{\bf \href{https://www.eso.org}{ESO} - European Southern Observatory} \hfill \textbf{Cerro Paranal, Chile}
-	\\ \textit{Research Engineer} \hfill {\em September 2020 - September 2021}
-	\begin{itemize}\vspace{-0.5em}
-		\item High-resolution forecasting of Astronomical Seeing using Machine Learning
-		      methods, using ARIMA and LSTM
-		\item Led the development of a unified data processing and evaluation
-		      pipeline: \href{https://pypi.org/project/nowcastlib/}{pypi.org/project/nowcastlib}
-	\end{itemize}
-	\textit{Software Engineering Intern} \hfill {\em August 2019 - January 2020}
-	\begin{itemize}\vspace{-0.5em}
-		\item Designed, developed, tested and deployed a system for displaying information from the
-		      observatory's several ticket systems in unified and personalized way via Microsoft Graph API.
-	\end{itemize}
-
-	{\bf \href{https://video.io/}{Video.io - startup}} \hfill \textbf{Remote, Anywhere}
-	\\ \textit{ML Engineer} \hfill {\em February 2020 - June 2020}
-	\begin{itemize}\vspace{-0.5em}
-		\item Worked on implementing abstractive summarization of dialogic video. (Pandas, Google Cloud
-		      Speech API).
-		\item Real time speech to text captioning of live video streams (NodeJS Streams, FFmpeg,
-		      HLS/DASH video).
-		\item Revamped full-stack of internal experimental website (NodeJS, GraphQL, PostgreSQL, Docker,
-		      NGINX, React).
-	\end{itemize}
-
-	{\bf \href{https://global.jaxa.jp/}{JAXA} -  Japan Aerospace Exploration Agency} \hfill \textbf{Sagamihara, Japan}
-	\\ \textit{Research Intern} \hfill {\em August 2018 - October 2018}
-	\begin{itemize}\vspace{-0.5em}
-		\item Developed software to estimate visibility of satellite given orbit simulation and thermal
-		      constraints.
-		\item Performed multi-parameter regression on ro-vibrational dataset so to characterize
-		      starburst galaxy NGC253.
-	\end{itemize}
-\end{rSection}
-
-\begin{rSection}{Publications and Personal Projects}
-
-	\begin{itemize}
-		\item van der Togt et al., \textit{[Re] Badder Seeds: Reproducing the Evaluation of Lexical
-			      Methods for Bias Measurement}, 2022. ReScience C 8,
-		      \#40. \href{https://doi.org/10.5281/zenodo.6574704}{10.5281/zenodo.6574704}.
-		\item
-		      {\bf \href{https://www.giuliostarace.com/projects/gptrue-or-false/}{GPTrue or False}}
-		      Browser extension showing the likelihood that given body of text was generated by
-		      \href{https://openai.com/blog/better-language-models/}{OpenAI's GPT-2}.
-		\item
-		      {\bf \href{https://github.com/thesofakillers/iclingo}{iclingo}}
-		      Jupyter Kernel for \href{https://en.wikipedia.org/wiki/Answer_set_programming}{answer set
-			      programming}  with \href{https://potassco.org/clingo/}{clingo}.
-		\item
-		      {\bf \href{https://github.com/thesofakillers/bLANS}{bLANS}} Tool for converting sane-LaTeX
-		      to \href{https://ans.app/}{ANS}-flavoured LaTeX and viceversa.
-	\end{itemize}
-\end{rSection}
-
-
-\begin{rSection}{Miscellaneous Qualities}
-
-	\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
-		Languages             & English (Fluent), Italian (Fluent), Spanish (Professional)										\\
-		Programming Languages & Python, Javascript, SQL, C/C++, HTML/CSS																			\\
-		Libraries             & NumPy, PyTorch, Pandas, HuggingFace, matplotlib, OpenCV, statsmodels, sklearn	\\
-		Frameworks and Specs  & PyTorch Lightning, WandB, NodeJS (Express), GraphQL, React										\\
-		Technologies          & Vim, Git, tmux, VSCode, ssh, \LaTeX, FFMPEG, Docker, SLURM 
-	\end{tabular}
-
-\end{rSection}
 \begin{center}
-	\begin{tabular}{ccc}
-		\href{https://www.giuliostarace.com}{giuliostarace.com} & \href{https://github.com/thesofakillers}{github.com/thesofakillers} & \href{https://www.linkedin.com/in/giuliostarace/}{linkedin.com/in/giuliostarace}
-	\end{tabular}
+	\textbf{\Huge \scshape Giulio Starace} \\ \vspace{1pt}
+	\today~$|$
+	\href{mailto:giulio.starace@gmail.com}{\underline{giulio@starace@gmail.com}} $|$
+	\href{https://github.com/thesofakillers}{\underline{github.com/thesofakillers}} $|$
+	\href{https://www.giuliostarace.com}{\underline{giuliostarace.com}}
 \end{center}
 
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{MSc Artificial Intelligence}{Amsterdam, The Netherlands}
+{\href{https://www.uva.nl/en}{University of Amsterdam}}{Sep. 2021 -- Aug 2023 (ongoing)}
+\resumeItemListStart
+\resumeItem{Current thesis direction: Natural language and Goal Misgeneralization In Offline
+	Reinforcement Learning}
+\resumeItem{Topics of note: Machine Learning, Deep Learning, Natural Language Processing,
+	Information Retrieval, \\ Reinforcement Learning, Spiking Neural Networks}
+\resumeItemListEnd
+\resumeSubheading
+{ABC Summer School - Computations in Consciousness and Perception}{Amsterdam, The Netherlands}
+{University of Amsterdam}{June 2022}
+\resumeItemListStart
+\resumeItem{2-week full-time computational neuroscience programme. Developed Project proposal
+	available at \href{https://www.giuliostarace.com/ltm/}{giuliostarace.com/ltm}.}
+\resumeItemListEnd
+\resumeSubheading
+{BSc Hons. in Natural Sciences (Physics \& Computer Science)}{Durham, UK}
+{\href{https://www.dur.ac.uk/}{\textit{Durham University}}}{Oct. 2016 -- July 2019}
+\resumeItemListStart
+\resumeItem{ Topics of note: Statistics, Vector Calculus, Linear Algebra, Thermodynamics, Quantum
+	\& Particle Physics, Databases, Algorithms and Data-structures, Cryptography and Information,
+	Compiler Design, Operating Systems, Computer Vision }
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{\href{https://icai.ai/airlab/}{University of Amsterdam - AIRLab}}{Amsterdam, The Netherlands}
+{Part-time Researcher (Research Assistant)}{Apr 2022 - Oct 2022}
+\resumeItemListStart
+\resumeItem{
+	Cross-lingual adaptation of large language models (LLMs). Paper and Code:
+	\href{https://github.com/thesofakillers/claficle}{github.com/thesofakillers/claficle}
+}
+\resumeItem{
+	Proposed novel ``Post-Hoc Disentanglement via Vessel Adapters (PHoDiVA)'' method.
+}
+\resumeItemListEnd
+
+\resumeSubheading
+{\href{https://www.eso.org}{ESO} - European Southern Observatory}{Cerro Paranal, Chile}
+{Research Engineer}{Sep 2020 -- Sep 2021}
+\resumeItemListStart
+\resumeItem{High-resolution forecasting of Astronomical Seeing using Machine Learning
+	methods, using ARIMA and LSTM}
+\resumeItem{Led the development of a unified data processing and evaluation
+	pipeline: \href{https://pypi.org/project/nowcastlib/}{pypi.org/project/nowcastlib}}
+\resumeItemListEnd
+\resumeSubSubheading
+{Software Engineering Intern}{Aug 2019 -- Jan 2020}
+\resumeItemListStart
+\resumeItem{Designed, developed, tested and deployed a system for displaying information from the
+	observatory's several ticket systems in unified and personalized way via Microsoft Graph API.}
+\resumeItemListEnd
+
+\resumeSubheading
+{\href{https://video.io/}{Video.io - startup}}{Remote, Anywhere}
+{Machine Learning Engineer}{Feb 2020 -- June 2020}
+\resumeItemListStart
+\resumeItem{Worked on implementing abstractive summarization of dialogic video. (Pandas, Google
+	Cloud Speech API).}
+\resumeItem{Real time speech to text captioning of live video streams (NodeJS Streams, FFmpeg,
+	HLS/DASH video).}
+\resumeItem{ Revamped full-stack of internal experimental website (NodeJS, GraphQL, PostgreSQL,
+	Docker, NGINX, React). }
+\resumeItemListEnd
+
+\resumeSubheading
+{\href{https://global.jaxa.jp/}{JAXA} -  Japan Aerospace Exploration Agency}{Sagamihara, Japan}
+{Southwestern University}{Aug 2018 -- Oct 2018}
+\resumeItemListStart
+\resumeItem{ Developed software to estimate visibility of satellite given orbit simulation and
+	thermal constraints. }
+\resumeItem{ Performed multi-parameter regression on ro-vibrational dataset so to characterize
+	starburst galaxy NGC253. }
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects \& Publications}
+\begin{itemize}
+	\setlength\itemsep{0em}
+	\item van der Togt et al., \textit{[Re] Badder Seeds: Reproducing the Evaluation of Lexical
+		      Methods for Bias Measurement}, 2022. ReScience C 8,
+	      \#40. \href{https://doi.org/10.5281/zenodo.6574704}{10.5281/zenodo.6574704}.
+	\item
+	      {\bf \href{https://www.giuliostarace.com/projects/gptrue-or-false/}{GPTrueOrFalse}}
+	      Browser extension showing likelihood that given body of text was generated by
+	      \href{https://openai.com/blog/better-language-models/}{OpenAI's GPT-2}.
+	\item
+	      {\bf \href{https://github.com/thesofakillers/iclingo}{iclingo}}
+	      Jupyter Kernel for \href{https://en.wikipedia.org/wiki/Answer_set_programming}{answer set
+		      programming}  with \href{https://potassco.org/clingo/}{clingo}.
+	\item
+	      {\bf \href{https://github.com/thesofakillers/bLANS}{bLANS}} Tool for converting sane-LaTeX
+	      to \href{https://ans.app/}{ANS}-flavoured LaTeX and viceversa.
+\end{itemize}
+
+
+
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Miscellaneous Qualities and Skills}
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+	Languages             & English (Fluent), Italian (Fluent), Spanish (Professional)                    \\
+	Programming Languages & Python, Javascript, SQL, C/C++, HTML/CSS                                      \\
+	Libraries             & NumPy, PyTorch, Pandas, HuggingFace, matplotlib, OpenCV, statsmodels, sklearn \\
+	Frameworks and Specs  & PyTorch Lightning, WandB, NodeJS (Express), GraphQL, React                    \\
+	Technologies          & Vim, Git, tmux, VSCode, ssh, \LaTeX, FFMPEG, Docker, SLURM
+\end{tabular}
+
+
+%-------------------------------------------
 \end{document}
+
