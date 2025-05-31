@@ -60,6 +60,18 @@
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
+% ------------------------
+% hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+  pdfborder    = {0 0 0}        % disable PDF boxes entirely
+}
+\usepackage[normalem]{ulem}
+\let\OldHref\href
+\renewcommand{\href}[2]{%
+  \OldHref{#1}{{\uline{#2}}}%
+}
+
 %-------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
@@ -171,7 +183,7 @@
 \resumeItemListEnd
 
 \resumeSubheading
-{\href{https://video.io/}{Video.io - startup}}{Remote, Anywhere}
+{\href{https://video.io/}{Video.io}}{Remote, Anywhere}
 {Machine Learning Engineer}{Feb 2020 -- June 2020}
 \resumeItemListStart
 \resumeItem{Worked on implementing abstractive summarization of dialogic video.}
@@ -205,7 +217,7 @@
 \resumeItemListEnd
 \resumeSubheading
 {ABC Summer School - Computations in Consciousness and Perception}{Amsterdam, The Netherlands}
-{University of Amsterdam}{June 2022}
+{\href{https://www.abcsymposium.nl/wp-content/uploads/2022/06/Program-Booklet-final.pdf}{University of Amsterdam}}{June 2022}
 \resumeItemListStart
 \resumeItem{2-week full-time computational neuroscience programme. Developed Project proposal
 	available at \href{https://www.giuliostarace.com/ltm/}{giuliostarace.com/ltm}.}
